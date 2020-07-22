@@ -1,13 +1,14 @@
 package application;
 
-import boardgame.Position;
+import boardgame.Board;
+import chess.Chess_match;
 
 public class Program {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Position position = new Position(3,5);
-		System.out.println(position);
+		Chess_match chessmatch = new Chess_match();
+		UI.PrintBoard(chessmatch.getPieces());
 	}
 
 }
