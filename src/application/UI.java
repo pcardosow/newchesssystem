@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import chess.ChessPiece;
 import chess.ChessPosition;
+import chess.Chess_match;
 import chess.Color;
 
 public class UI {
@@ -39,8 +40,14 @@ public class UI {
 		}
 	}
 	
+	public static void printMatch(Chess_match chessmatch) {
+		printBoard(chessmatch.getPieces());
+		System.out.println("Turn: "+chessmatch.getTurn());
+		System.out.println("Waiting player: "+chessmatch.getCurrentPlayer());
+	}
 	
-	public static void PrintBoard(ChessPiece[][] pieces) {
+	
+	public static void printBoard(ChessPiece[][] pieces) {
 		for (int i = 0; i < pieces.length; i++) {
 			System.out.print((8 - i) + " ");
 			for (int j = 0; j < pieces.length; j++) {
@@ -53,7 +60,7 @@ public class UI {
 	}
 	
 	
-	public static void PrintBoard(ChessPiece[][] pieces,boolean possibleMoves[][]) {
+	public static void printBoard(ChessPiece[][] pieces,boolean possibleMoves[][]) {
 		for (int i = 0; i < pieces.length; i++) {
 			System.out.print((8 - i) + " ");
 			for (int j = 0; j < pieces.length; j++) {
